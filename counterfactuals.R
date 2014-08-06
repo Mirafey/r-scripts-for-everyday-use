@@ -53,4 +53,4 @@ summary(whatif(data = model1, cfact = data.frame(race1 = 1,
                                                  educate = mean(turnout$educate),
                                                  income = 10*mean(turnout$income))))
 
-# The test correctly identified a bad counterfactual.
+# The test correctly identified a bad counterfactual
