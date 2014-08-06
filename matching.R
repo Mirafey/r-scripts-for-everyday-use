@@ -90,4 +90,4 @@ s.out <- sim(model1, x = sim1, x1 = sim2)
 summary(s.out)
 plot(s.out)
 
-# Both first differences are -0.08.
+# Both first differences are -0.08, and that's the treatment effect :)
