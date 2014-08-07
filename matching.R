@@ -7,7 +7,7 @@
 # Nielsen et al "Foreign Aid Shocks as a Cause of Violent Armed Conflict",
 # (AJPS, 2011:55(2)). 
 
-# Estimating it with R is very simple. We load the "MatchIt" and "cem" packages
+# Matching cases with R is very simple. We load the "MatchIt" and "cem" packages
 # written by Gary King and his colleages. There are several types of matching
 # algorithms, here I use only 2 of them. We always have to check which is the
 # best-suited one for the job. A review of each matching algorithm included in
