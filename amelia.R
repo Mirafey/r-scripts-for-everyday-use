@@ -14,7 +14,7 @@ summary(freetrade)
 # and NOMS, nominal ones. One can also add variables with lag or lead.
 # One can also incorporate informative priors to the imputation,
 # see: http://r.iq.harvard.edu/docs/amelia/amelia.pdf pp.24
-# If you don't want anything like that, just ignored what you've just read :)
+# If you don't want anything like that, just ignore what you've just read :)
 
 
 a.out <- amelia(freetrade, m = 5, ts = "year", cs = "country",
