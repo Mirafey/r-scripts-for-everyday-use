@@ -1,6 +1,7 @@
 # How to run simulations in arm or rstanarm the same way as in Zelig
 
 # Create a data set
+seed(12345)
 x <- rnorm(100,20,10)
 z <- rnorm(100,10,5)
 e <- rnorm(100,0,1)
@@ -34,13 +35,21 @@ y_sim <- rnorm(n = 1000, mean = sims@coef %*% t(as.matrix(s2)), sd = sims@sigma)
 mean(y_sim)
 plot(density(y_sim))
 
+# Computing quantities of interest with predict()
+pred <- predict(m1.arm, s2, type="response", se.fit=TRUE)
+pred$fit
+
+# confidence interval
+pred$fit - (pred$se.fit * 1.96)
+pred$fit + (pred$se.fit * 1.96)
+
 # The results should be the same for both.
 
 ## Using Fearon's data set and logistic regressions:
 
 # Data set
 library(foreign)
-fearon <- read.dta("/yourfolder/repdata.dta")
+fearon <- read.dta("/home/sussa/Desktop/Desktop/repdata.dta")
 fearon$onset <- ifelse(fearon$onset >= 1, 1, fearon$onset)
 
 # Models:
@@ -61,4 +70,16 @@ s4 <- data.frame(intercept = 1, warl = 0, gdpenl = 0, lpopl1 = 20, lmtnest = 2.1
 sims <- arm::sim(m2.arm, n = 1000)
 y_sim <- rbinom(n = 1000, size = 1, prob = plogis(sims@coef %*% t(as.matrix(s4))))
 mean(y_sim)
+
+# With predict()
+pred2 <- predict(m2.arm, s4, type="response", se.fit=TRUE)
+pred2$fit
+
+# Different values for population (log)
+s5 <- data.frame(intercept = 1, warl = 0, gdpenl = 0, lpopl1 = 0:25, lmtnest = 2.17)
+pred3 <- predict(m2.arm, s5, type="response", se.fit=TRUE)
+plot(0:25, pred3$fit, type="l", xlab="log(population)", ylab="Pr(Civil War Onset=1)",
+     ylim=c(0, 1))
+lines(0:25, pred3$fit - pred3$se.fit * 1.96, col="grey80")
+lines(0:25, pred3$fit + pred3$se.fit * 1.96, col="grey80")
 
