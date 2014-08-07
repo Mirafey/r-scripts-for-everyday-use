@@ -1,4 +1,4 @@
-# How to run simulations in arm or rstanarm the same way as in Zelig
+# How to simulate quantities of interest in Zelig, arm and using predict()
 
 # Create a data set
 seed(12345)
