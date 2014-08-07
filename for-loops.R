@@ -1,5 +1,5 @@
 # "For loops" have always been difficult to master in R. 
-# Nevertheless, there is some tricks that one can do to improve their efficiency
+# Nevertheless, there are some tricks that one can do to improve their efficiency
 # This example was extracted from: http://paleocave.sciencesortof.com/2013/03/writing-a-for-loop-in-r/
 
 # Let's get started
