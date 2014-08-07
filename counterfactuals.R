@@ -1,7 +1,7 @@
 # "Whatif?": Software for Evaluating Counterfactuals (Stoll, King and Zeng, 2010)
 # http://gking.harvard.edu/whatif
 # http://gking.harvard.edu/files/abs/counterft-abs.shtml Read!
-# http://gking.harvard.edu/files/abs/counterf-abs.shtml Read too!
+# http://gking.harvard.edu/files/abs/counterf-abs.shtml Read it too!
 
 # Not all counterfactuals should be evaluated. As the authors say:
 # "[...] when the counterfactuals posed are too far from the data at hand, conclusions drawn
